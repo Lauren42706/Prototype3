@@ -39,7 +39,7 @@
                 Margin="10, 0" Placeholder="Password"
                x:Name="passwordEntry"/>
         <Button Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"
-                Text="Sign Up" Clicked="SignUpClicked"/>
+                Text="Sign Up" />
     </Grid>
 
 </ContentPage>

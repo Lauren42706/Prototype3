@@ -1,4 +1,4 @@
-﻿using Prototype2.Services;
+﻿//using Prototype2.Services;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -12,19 +12,19 @@ namespace Prototype2
         /// We will put or Database code here so that it 
         /// is accessible throughout the app.
         /// </summary>
-        private static Database database;
-        public static Database Database
-        {
-            get
-            {
-                if(database == null)
-                {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "user.db3"));
-                }
+        //private static Database database;
+        //public static Database Database
+        //{
+        //    get
+        //    {
+        //        if(database == null)
+        //        {
+        //            database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "user.db3"));
+        //        }
 
-                return database;
-            }
-        }
+        //        return database;
+        //    }
+        //}
 
         public App()
         {
