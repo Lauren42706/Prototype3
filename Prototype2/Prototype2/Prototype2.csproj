@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Compile Remove="ViewModel\**" />
-    <EmbeddedResource Remove="ViewModel\**" />
+    <EmbeddedResource Remove="ViewModel\**" /> 
     <None Remove="ViewModel\**" />
   </ItemGroup>
 
