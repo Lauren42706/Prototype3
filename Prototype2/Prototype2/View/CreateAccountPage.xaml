@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype2.View.CreateAccountPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"
+               Source="smiley.png"/>
+        <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
+               Text="Sign Up" HorizontalTextAlignment="Center"
+               FontSize="50"/>
+        <Entry Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"
+                Margin="10, 0" Placeholder="First Name"
+               x:Name="firstNameEntry"/>
+        <Entry Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"
+                Margin="10, 0" Placeholder="Last Name"
+               x:Name="lastNameEntry"/>
+        <Entry Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4"
+                Margin="10, 0" Placeholder="Email Address"
+               x:Name="emailEntry"/>
+        <Entry Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="4"
+                Margin="10, 0" Placeholder="Password"
+               x:Name="passwordEntry"/>
+        <Button Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"
+                Text="Sign Up" Clicked="SignUpClicked"/>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Community.Vlogs"
+              BackgroundColor="AliceBlue"
+              Title="Welcome To The Community Page" Padding="5">
+    <!--BLOGS PAGE/ COMMUNITY HOME PAGE-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ButtenNavStyle"
+                   TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="Medium"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="BorderColor"
+                        Value="Black"/>
+                <Setter Property="BorderColor"
+                        Value="Black"/>
+                <Setter Property="BorderWidth"
+                        Value="1.5"/>
+                <Setter Property="CornerRadius"
+                        Value="10"/>
+                <Setter Property="BackgroundColor"
+                        Value="PaleVioletRed"/>
+                <Setter Property="Margin"
+                        Value="3,0,3,15"/>
+            </Style>
+
+            <Style x:Key="ScrollviewLabel"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="Large"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="Margin"
+                        Value="0,5,0,5"/>
+            </Style>
+
+            <Style x:Key="LinkLabel"
+                   TargetType="Span">
+                <Setter Property="FontSize"
+                        Value="Medium"/>
+                <Setter Property="TextColor"
+                        Value="Black"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Welcome To The Community Page" 
+                   Grid.Row="0" 
+                   Grid.ColumnSpan="3"
+                   FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   Margin="5,10,5,10"/>
+
+            <Label Text="Blogs" 
+                   Grid.Row="1" 
+                   Grid.ColumnSpan="3"
+                   FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                   HorizontalTextAlignment="Center"
+                   Margin="5,10,5,10"/>
+
+            <Button Grid.Row="2" 
+                    Grid.Column="0"
+                    Style="{StaticResource ButtenNavStyle}"
+                    Text="Blogs"
+                    Clicked="BlogsClicked"
+                    
+                    />
+
+            <Button Grid.Row="2" 
+                    Grid.Column="2"
+                    Style="{StaticResource ButtenNavStyle}"
+                    Text="Podcast"
+                    Clicked="PodcastsClicked"
+                    />
+
+
+        </Grid>
+
+        <ScrollView>
+            <StackLayout>
+                <!-- LINK The National Autistic Society Vlog -->
+                <Label Text="The National Autistic Society Blog" 
+                       Style="{StaticResource ScrollviewLabel}"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource LinkLabel }"/>
+                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
+                            <Span Text="here" Style="{StaticResource LinkLabel }"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.autism.org.uk/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <!-- LINK Kimock7 VLOG-->
+                <Label Text="Kimock7" 
+                       Style="{StaticResource ScrollviewLabel}"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource LinkLabel }"/>
+                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
+                            <Span Text="here" Style="{StaticResource LinkLabel }"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.youtube.com/channel/UCajRxVCzegErVxejn3bHExQ" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <!-- LINK The Autism Helper VLOG -->
+                <Label Text="The Autism Helper" 
+                       Style="{StaticResource ScrollviewLabel}"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource LinkLabel }"/>
+                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
+                            <Span Text="here" Style="{StaticResource LinkLabel }"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://theautismhelper.com/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <!-- LINK Agony Autie VLOG -->
+                <Label Text="Agony Autie VLOG" 
+                       Style="{StaticResource ScrollviewLabel}"/>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Style="{StaticResource LinkLabel }"/>
+                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
+                            <Span Text="here" Style="{StaticResource LinkLabel }"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.youtube.com/c/AgonyAutie" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>

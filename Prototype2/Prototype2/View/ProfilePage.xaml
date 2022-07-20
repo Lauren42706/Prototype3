@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype2.View.ProfilePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ImageButton Source="profile_user.png"
+                     Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" BackgroundColor="Transparent" Clicked="ParentClicked"/>
+        <ImageButton Source="profile_user.png" 
+                     Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" BackgroundColor="Transparent" Clicked="ChildClicked"/>
+    </Grid>
+</ContentPage>
