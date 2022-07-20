@@ -10,6 +10,10 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
+	<ItemGroup>
+		<ProjectReference Include="..\..\Prototype2Shared\Prototype2Shared.csproj" />
+	</ItemGroup>
+
   <ItemGroup>
     <Compile Remove="ViewModel\**" />
     <EmbeddedResource Remove="ViewModel\**" /> 
@@ -17,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
@@ -24,9 +29,9 @@
 
   <ItemGroup>
     <Folder Include="Fonts\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Converters\" />
-    <Folder Include="Services\" />
+    <Folder Include="Helpers\Extensions\" />
+    <Folder Include="Helpers\Validations\" />
     <Folder Include="ViewModel\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
