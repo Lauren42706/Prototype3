@@ -26,9 +26,6 @@
     <Folder Include="Fonts\" />
     <Folder Include="Converters\" />
     <Folder Include="Helpers\Extensions\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
