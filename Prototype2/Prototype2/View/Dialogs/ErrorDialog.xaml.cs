@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Prototype2.View.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ErrorDialog : ContentPage
+    public partial class ErrorDialog : Frame
     {
         public ErrorDialog()
         {
