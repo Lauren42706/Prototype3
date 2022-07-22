@@ -32,5 +32,29 @@ namespace Prototype2.View
         {
             await Navigation.PushAsync(new Vlogs());
         }
+        private async void BlogsClicked(object sender, EventArgs e) { }
+
+
+        /*      public class TapViewModel : BlogComHome
+              {           
+                  ICommand tapCommand;
+                  public TapViewModel()
+                  {
+                      // configure the TapCommand with a method
+                      tapCommand = new Command(OnTapped);
+
+                  }
+
+                  public ICommand TapCommand
+                  {
+                      get { return tapCommand; }
+                  }
+
+                  void OnTapped (object s)
+                  {
+
+                  }   */
+
+
     }
 }

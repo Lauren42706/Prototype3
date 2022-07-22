@@ -31,5 +31,7 @@ namespace Community
         {
             await Navigation.PushAsync(page: new Vlogs());
         }
+
+        private async void PodcastsClicked(object sender, EventArgs e) { }
     }
 }

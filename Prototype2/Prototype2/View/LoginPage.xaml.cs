@@ -21,9 +21,14 @@ namespace Prototype2
             await Navigation.PushAsync(new ProfilePage());
         }
 
+        /*   private async void CreateAccountClicked(object sender, EventArgs e)
+           {
+               await Navigation.PushAsync(new CreateAccountPage());
+           }  */
+
         private async void CreateAccountClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CreateAccountPage());
+            await Navigation.PushAsync(new BlogComHome());
         }
 
         private async void ForgotPasswordClicked(object sender, EventArgs e)
