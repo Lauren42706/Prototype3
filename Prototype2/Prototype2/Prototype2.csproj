@@ -15,12 +15,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ViewModel\**" />
-    <EmbeddedResource Remove="ViewModel\**" /> 
-    <None Remove="ViewModel\**" />
-  </ItemGroup>
-
-  <ItemGroup>
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	<PackageReference Include="Prism.Unity.Forms" Version="8.1.97" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
@@ -32,6 +26,7 @@
     <Folder Include="Fonts\" />
     <Folder Include="Converters\" />
     <Folder Include="Helpers\Extensions\" />
+    <Folder Include="ViewModel\" />
     <Folder Include="ViewModel\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
