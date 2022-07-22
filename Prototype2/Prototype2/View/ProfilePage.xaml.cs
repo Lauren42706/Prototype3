@@ -17,10 +17,10 @@ namespace Prototype2.View
             InitializeComponent();
         }
 
-        private async void ParentClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ParentHomePage());
-        }
+           private async void ParentClicked(object sender, EventArgs e)
+            {
+                await Navigation.PushAsync(new ParentHomePage());
+            } 
         private async void ChildClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ChildHomePage());

@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototype2.View.BlogComHome" Padding="5"
-             Title="Blogs">
+             x:Class="Prototype2.View.BlogComHome" 
+             Title="Blogs Page">
+
 
     <!--BLOGS PAGE/ COMMUNITY HOME PAGE-->
     <ContentPage.Resources>
@@ -16,16 +17,12 @@
                         Value="Black"/>
                 <Setter Property="BorderColor"
                         Value="Black"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="BorderColor"
-                        Value="Black"/>
-                <Setter Property="BorderWidth"
-                        Value="2"/>
-                <Setter Property="CornerRadius"
-                        Value="15"/>
                 <Setter Property="BackgroundColor"
-                        Value="PaleVioletRed"/>
+                        Value="Transparent"/>
+                <Setter Property="BorderWidth"
+                        Value="1.5"/>
+                <Setter Property="CornerRadius"
+                        Value="10"/>
                 <Setter Property="Margin"
                         Value="3,0,3,15"/>
             </Style>
@@ -35,7 +32,9 @@
                 <Setter Property="FontSize"
                         Value="Large"/>
                 <Setter Property="TextColor"
-                        Value="BlueViolet"/>
+                        Value="Black"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
                 <Setter Property="Margin"
                         Value="0,5,0,5"/>
             </Style>
@@ -45,17 +44,20 @@
                 <Setter Property="FontSize"
                         Value="Medium"/>
                 <Setter Property="TextColor"
-                        Value="Black"/>
+                        Value="Black" />
             </Style>
 
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <StackLayout>
-        <Grid>
+
+        <Grid BackgroundColor="LightPink" >
+
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -64,204 +66,91 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="Welcome To The Community Page" 
-                   Grid.Row="0" 
-                   Grid.ColumnSpan="3"
-                   FontSize="Large" FontAttributes="Bold" TextColor="Black"
-                   HorizontalTextAlignment="Center"
-                   Margin="5,10,5,10"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="0"
                     Style="{StaticResource ButtenNavStyle}"
-                    Text="Youtube"
-                    />
+                    Text="Blogs"
+                    Clicked="BlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     Style="{StaticResource ButtenNavStyle}"
-                    Text="Podcast"
-                    Clicked="PodcastsClicked"
-                    />
+                    Text="Vlogs"
+                    Clicked="VlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="2"
                     Style="{StaticResource ButtenNavStyle}"
-                    Text="Vlogs"
-                    Clicked="VlogsClicked"
-                    />
+                    Text="Podcasts"
+                    Clicked="PodcastsClicked"/>
 
         </Grid>
 
-        <ScrollView>
+        <ScrollView Padding="5">
             <StackLayout>
+               
                 <!-- LINK Autism Speaks Blog -->
-                <Label Text="Autism Speaks Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://docs.microsoft.com/xamarin/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label Text="Autism Speaks Blog"  Style="{StaticResource ScrollviewLabel}"/>
+                <Image Source="AutismSpeaks" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.autismspeaks.org/" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text=" Autism Speaks is dedicated to promoting solutions, across the spectrum and throughout the life span, for the needs of people with autism and their families."
+                       Style="{StaticResource LinkLabel }"/>
+
+
 
                 <!-- LINK Autism Society Blog-->
+
                 <Label Text="Autism Society Blog" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="www.autism-society.org" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Image Source="AutismSociety" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="www.autism-society.org" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="  Everyone's story is different.The experience of Autism is not one thing. It is many things. 
+                                  It's dreams, talents, relationships, victories, hurdles, and everything in between. The connection between those experiences is you.
+                                  You break the mold. No matter who you are, the person you are is infinite and you are the only you there is."
+                                  Style="{StaticResource LinkLabel }" />
 
-                <!-- LINK AutismWeb Blog -->
-                <Label Text="AutismWeb Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="www.autismweb.com" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
 
-                <!-- LINK AutismBeacon Blog -->
-                <Label Text="AutismBeacon Blog" 
+                <!-- LINK The Autism Dad Blog -->
+                <Label Text="The Autism Dad Blog" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="www.autismbeacon.com" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                       <Image Source="AutismDad">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="www.autism-society.org" />
+                </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="                                   
+ Welcome to The Autism Dad blog. This blog is all about my life as a single Dad raising my three amazing autistic kids. I'm honest, transparent,
+ and very open about the struggles we face as a family. My message is one of hope, understanding, education, and perseverance.
+ No matter what life throws our way, we always find a way through it."
+ Style="{StaticResource LinkLabel }" />
+        
 
                 <!-- LINK Awesomism Mom -->
-                <Label Text="Awesomism MomBlog" 
+                <Label Text="Awesomism Mom Blog" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://awesomismmom.com/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Image Source="AwesomismMom" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="www.autism-society.org" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="Welcome to our AwesomismMom website! We're working to raise Autism Awareness, Acceptance and Activism.
+ We're working with Team Awesomism by building a virtual academy that is focused on life skills and social skills for autistic adults, as well as help them get stable and steady for their future." Style="{StaticResource LinkLabel }" />
 
-                <!-- LINK Autism with a Side of Fries -->
-                <Label Text="Autism with a Side of Fries Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="http://autismwithasideoffries.blogspot.com/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <!-- LINK Finding Cooper’s Voice -->
-                <Label Text="Finding Cooper's Voice Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.findingcoopersvoice.com/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-                <!-- LINK my colour is blue -->
-                <Label Text="my colour is blue Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Click " Style="{StaticResource LinkLabel }" />
-                            <Span Text="here" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.facebook.com/mycolorisblue/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" to visit the website and learn more about Autism." Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
 
             </StackLayout>
         </ScrollView>
