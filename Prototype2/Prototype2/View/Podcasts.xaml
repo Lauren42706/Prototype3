@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Community.Podcasts"
              x:Name="PodcastsPage"
-              BackgroundColor="AliceBlue"
               Title="Podcasts Page">
 
     <!--PODCASTS PAGE-->
@@ -55,7 +54,7 @@
 
     <StackLayout>
 
-        <Grid BackgroundColor="LightPink" >
+        <Grid BackgroundColor="DodgerBlue" >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -92,113 +91,79 @@
 
         <ScrollView Padding="5">
             <StackLayout>
+                
                 <!-- LINK ABA Inside Track -->
                 <Label Text="ABA Inside Track" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link ABA Inside Track " Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="abainsidetrack.com" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" A podcast about applied behavior analysis and the research that fuels the field.
+                <Image Source="ABA" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="abainsidetrack.com" />
+                </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text=" A podcast about applied behavior analysis and the research that fuels the field.
 A spirited discussion between two BCBA-Ds and their BCBA host, a source of continuing education credit for BCBAs, BCBA-Ds, and BCaBAs.More fun than pressing a lever"
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="ABA" />
+
 
                 <!-- LINK Autism POVs -->
                 <Label Text="Autism POVs" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link Autism POVs" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.autismspeaks.org/autism-speaks-podcasts/autism-povs-how-we-talk-about-autism" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text="There are always topics in any community that aren't universally agreed upon and the autism community is no different. Because autism is considered a spectrum disorder,that means that each person on the spectrum largely has an experience uniquely their own."
+                <Image Source="AutismPOVs">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.autismspeaks.org/autism-speaks-podcasts/autism-povs-how-we-talk-about-autism" />
+                </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="There are always topics in any community that aren't universally agreed upon and the autism community is no different. Because autism is considered a spectrum disorder,that means that each person on the spectrum largely has an experience uniquely their own."
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="AutismPOVs" />
+
 
                 <!-- LINK Adventures in Autism -->
                 <Label Text="Adventures in Autism" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link Adventures in Autism" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://podcasts.apple.com/us/podcast/adventures-in-autism/id1436728566" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" Welcome to Adventures in Autism! This podcast was created as a safe place to come together and share our journeys with autism.
+                <Image Source="AIA" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://podcasts.apple.com/us/podcast/adventures-in-autism/id1436728566" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text=" Welcome to Adventures in Autism! This podcast was created as a safe place to come together and share our journeys with autism.
 Host, Megan Carranza, shares her family's experience with her son, Logan, and speaks with a variety of incredible guests."
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="AIA" />
+
 
                 <!-- LINK ASF Weekly Science -->
                 <Label Text="ASF Weekly Science" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link ASF Weekly Science" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://asfpodcast.org/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text="  The latest autism research news stories with ASF Chief Science Officer Alycia Halladay"
+                <Image Source="ASF" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://asfpodcast.org/" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="  The latest autism research news stories with ASF Chief Science Officer Alycia Halladay"
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="ASF" />
+
 
                 <!-- LINK The Autism Show -->
                 <Label Text="The Autism Show" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link The Autism Show" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://autismshow.co.uk/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text="Welcome to The Autism Show, the national event for autism, in partnership with the National Autistic Society.If you're looking for information and direction pre or post diagnosis, are facing daily challenges, or approaching significant transition points, then The Autism Show can help you.
+                <Image Source="AutismShow" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://autismshow.co.uk/" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="Welcome to The Autism Show, the national event for autism, in partnership with the National Autistic Society.If you're looking for information and direction pre or post diagnosis, are facing daily challenges, or approaching significant transition points, then The Autism Show can help you.
 At the show, you can pick and choose from over 100 hours of talks, clinics and workshops, plus hundreds of specialist products and services. "
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="AutismShow" />
+
 
             </StackLayout>
         </ScrollView>

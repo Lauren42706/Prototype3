@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Community.Vlogs"
-              BackgroundColor="AliceBlue"
+             x:Class="Community.Vlogs"    
               Title="Vlogs Page" >
 
     <!--VLOGS PAGE-->
@@ -55,7 +54,7 @@
 
     <StackLayout>
 
-        <Grid BackgroundColor="LightPink" >
+        <Grid BackgroundColor="DodgerBlue" >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -96,91 +95,59 @@
                 <!-- LINK The National Autistic Society Vlog -->
                 <Label Text="The National Autistic Society Blog" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Link The National Autistic Society. 
-                                  " Style="{StaticResource LinkLabel }"
-                             TextColor="Blue"
-                             TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.autism.org.uk/" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text="We are the UK's leading charity for people on the autism spectrum and their families. Since 1962, we have been providing support, guidance and advice, as well as campaigning for improved rights, services and opportunities to help create a society that works for autistic people. "
+                <Image Source="NAS" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.autism.org.uk/" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="We are the UK's leading charity for people on the autism spectrum and their families. Since 1962, we have been providing support, guidance and advice, as well as campaigning for improved rights, services and opportunities to help create a society that works for autistic people. "
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="NAS" />
+
 
                 <!-- LINK Kimock7 VLOG-->
                 <Label Text="Kimock7" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Style="{StaticResource LinkLabel }"/>
-                            <Span Text="Link Kimock7" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.youtube.com/channel/UCajRxVCzegErVxejn3bHExQ" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" My goal in sharing my son's personal story is to change the way we think about the people
+                <Image Source="Kimock7" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.youtube.com/channel/UCajRxVCzegErVxejn3bHExQ" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text=" My goal in sharing my son's personal story is to change the way we think about the people
 around us–their abilities and their challenges.  Kimock7 is dedicated to autism awareness, acceptance, advocacy, activism, education, and autism nutrition and fathering a boy with Autism. "
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="Kimock7" />
 
 
                 <!-- LINK The Autism Helper VLOG -->
                 <Label Text="The Autism Helper" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link The Autism Helper" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.youtube.com/user/theautismhelper" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text=" We at The Autism Helper, Inc. are dedicated to empowering those who support individuals with Autism by providing resources, tools, and the methods to measure success. "
+               <Image Source="AutismHelper" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.youtube.com/user/theautismhelper" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text=" We at The Autism Helper, Inc. are dedicated to empowering those who support individuals with Autism by providing resources, tools, and the methods to measure success. "
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="AutismHelper" />
+               
 
                 <!-- LINK Agony Autie VLOG -->
                 <Label Text="Agony Autie VLOG" 
                        Style="{StaticResource ScrollviewLabel}"/>
-                <Label LineBreakMode="WordWrap">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Link Agony Autie" Style="{StaticResource LinkLabel }"
-                  TextColor="Blue"
-                  TextDecorations="Underline">
-                                <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding TapCommand}"
-                                          CommandParameter="https://www.youtube.com/c/AgonyAutie" />
-                                </Span.GestureRecognizers>
-                            </Span>
-                            <Span Text="The ramblings of a 35?year old Autistic woman, reaching out to autistics, parents, carers, professionals and society in general. "
+                <Image Source="AgonyAutie" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+            Command="{Binding TapCommand}"
+            CommandParameter="https://www.youtube.com/c/AgonyAutie" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label LineBreakMode="WordWrap" Text="The ramblings of a 35?year old Autistic woman, reaching out to autistics, parents, carers, professionals and society in general. "
                                   Style="{StaticResource LinkLabel }" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="AgonyAutie" />
+
 
             </StackLayout>
         </ScrollView>
