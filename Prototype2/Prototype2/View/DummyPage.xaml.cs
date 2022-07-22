@@ -17,10 +17,10 @@ namespace Prototype2.View
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetUserDataAsync();
-        }
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    collectionView.ItemsSource = await App.Database.GetUserDataAsync();
+        //}
     }
 }
