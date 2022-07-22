@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Prototype2.Styles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Colors : ContentPage
+    public partial class Colors : ResourceDictionary
     {
         public Colors()
         {

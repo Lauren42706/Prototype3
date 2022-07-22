@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Prototype2.Styles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Fonts : ContentPage
+    public partial class Fonts : ResourceDictionary
     {
         public Fonts()
         {
