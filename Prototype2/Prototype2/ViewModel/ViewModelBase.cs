@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.CommunityToolkit.UI.Views;
 
 namespace Prototype2.ViewModel
 {
@@ -12,11 +13,20 @@ namespace Prototype2.ViewModel
         protected INavigationService NavigationService { get; private set; }
 
         private string _title;
+
         public string Title
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
+
+        private LayoutState _mainState;
+        public LayoutState MainState
+        {
+            get { return _mainState; }
+            set { SetProperty(ref _mainState, value); }
+        }
+
 
         public ViewModelBase(INavigationService navigationService)
         {
