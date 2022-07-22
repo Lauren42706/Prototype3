@@ -52,7 +52,7 @@
 
     <StackLayout>
 
-        <Grid BackgroundColor="LightPink" >
+        <Grid BackgroundColor="DodgerBlue" >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />

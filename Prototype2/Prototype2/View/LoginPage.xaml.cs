@@ -33,7 +33,7 @@ namespace Prototype2
 
         private async void ForgotPasswordClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ForgotPasswordPage());
+            await Navigation.PushAsync(new StoryStartPage());
         }
     }
 }
