@@ -4,9 +4,10 @@
              x:Class="Prototype2.View.ParentHomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="settings" Clicked="Settings"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

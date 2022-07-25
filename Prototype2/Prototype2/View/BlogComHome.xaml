@@ -82,6 +82,7 @@
             <Button Grid.Row="2" 
                     Grid.Column="2"
                     Style="{StaticResource ButtenNavStyle}"
+                    
                     Text="Podcasts"
                     Clicked="PodcastsClicked"/>
 

@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace Prototype2.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ParentHomePage : ContentPage
+    public partial class Settings : ContentPage
     {
-        public ParentHomePage()
+        public Settings()
         {
             InitializeComponent();
         }
-
-        private async void Settings(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Settings());
-        }
-
     }
 }
