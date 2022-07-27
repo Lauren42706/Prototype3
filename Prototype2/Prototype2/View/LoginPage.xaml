@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prototype2.MainPage">
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:controls="clr-namespace:Prototype2.View.Controls"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Prototype2.MainPage"
+             BackgroundColor="WhiteSmoke">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -24,11 +30,65 @@
         <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
                Text="Welcome to StickerTime!" HorizontalTextAlignment="Center"
                FontSize="50"/>
-        <Entry Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"
-                Margin="10, 0" Placeholder="Email Address"/>
-        <Entry Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"
-                Margin="10, 0" Placeholder="Password"/>
-        <Button Text="Login" Clicked="LoginClicked"
+
+        <Frame x:Name="EmailFrame" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" CornerRadius="45" Margin="0" Padding="0">
+            
+               <Entry  Text="{Binding Email.Value}"
+                Margin="10, 0" Placeholder="Email Address">
+                <Entry.Effects>
+                    <xct:RemoveBorderEffect></xct:RemoveBorderEffect>
+                </Entry.Effects>
+
+                <Entry.Behaviors>
+                <xct:UserStoppedTypingBehavior
+                    Command="{Binding ValidateCommand}"
+                    CommandParameter="email"
+                    StoppedTypingTimeThreshold="50"
+                    ShouldDismissKeyboardAutomatically="False"
+                    />
+            </Entry.Behaviors>
+            <Entry.Triggers>
+                <DataTrigger 
+                    TargetType="Entry"
+                    Binding="{Binding Email.IsValid}"
+                    Value="False">
+                    <Setter TargetName="EmailFrame" Property="Frame.BorderColor" Value="Red" />
+                    <Setter TargetName="LoginButton" Property="Button.IsEnabled" Value="False"/>
+                </DataTrigger>
+            </Entry.Triggers>    
+        </Entry>
+        </Frame>
+
+        <Frame x:Name="PinFrame" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" CornerRadius="45" Margin="0" Padding="0">
+            
+             <Entry 
+               Margin="10, 0" Placeholder="Password"
+               IsPassword="True" Keyboard="Text" ReturnCommand="{Binding LoginCommand}"
+               Text="{Binding Pin.Value}">
+            <Entry.Behaviors>
+                <xct:UserStoppedTypingBehavior
+                    Command="{Binding ValidateCommand}"
+							CommandParameter="pin"
+                            StoppedTypingTimeThreshold="50"
+                            ShouldDismissKeyboardAutomatically="False"/>
+            </Entry.Behaviors>
+            <Entry.Triggers>
+                <DataTrigger
+                    TargetType="Entry"
+				    Binding="{Binding Pin.IsValid}"
+				    Value="False">
+                    <Setter TargetName="PinFrame" Property="Frame.BorderColor" Value="Red" />
+                    <Setter TargetName="LoginButton" Property="Button.IsEnabled" Value="False" />
+                </DataTrigger>
+            </Entry.Triggers>
+            <Entry.Effects>
+                <xct:RemoveBorderEffect></xct:RemoveBorderEffect>
+            </Entry.Effects>
+        </Entry>
+        </Frame>
+
+
+        <Button x:Name="LoginButton" Text="Login" Clicked="LoginClicked"
                 Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
                 Margin="10, 0"/>
         <Button Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2"
