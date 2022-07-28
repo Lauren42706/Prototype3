@@ -15,19 +15,19 @@
         </Grid.RowDefinitions>
 
         <Button Text="Setting" Grid.Row="0"  
-                Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                   Textcolor="Black" /> 
+                BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                   TextColor="Black" /> 
 
-        <Button Text="Setting" Grid.Row="1" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+        <Button Text="Setting" Grid.Row="1" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"/>
 
-        <Button Text="Setting" Grid.Row="2" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+        <Button Text="Setting" Grid.Row="2" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"/>
 
-        <Button Text="Setting" Grid.Row="3" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+        <Button Text="Setting" Grid.Row="3" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"/>
 
-        <Button Text="Setting" Grid.Row="5" Backgroundcolor="Pink" Textcolor="Black" />
+        <Button Text="Setting" Grid.Row="5" BackgroundColor="Pink" TextColor="Black" />
 
         
         

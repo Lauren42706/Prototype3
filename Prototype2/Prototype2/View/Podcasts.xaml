@@ -66,24 +66,24 @@
             <Button Grid.Row="2" 
                     Grid.Column="0"
                     Style="{StaticResource ButtenNavStyle}"
-                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"
                     Text="Blogs"
                     Clicked="BlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     Style="{StaticResource ButtenNavStyle}"
-                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"
                     Text="Vlogs"
                     Clicked="VlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="2"
                     Style="{StaticResource ButtenNavStyle}"
-                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
-                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
+                     BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightButtonTextColor},Dark={StaticResource DarkButtonTextColor}}"
                     Text="Podcasts"
                     Clicked="PodcastsClicked"/>
 
@@ -94,7 +94,7 @@
                 
                 <!-- LINK ABA Inside Track -->
                 <Label Text="ABA Inside Track" 
-                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
+                       Style="{StaticResource ScrollviewLabel}" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="ABA" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
@@ -104,12 +104,12 @@
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" A podcast about applied behavior analysis and the research that fuels the field.
 A spirited discussion between two BCBA-Ds and their BCBA host, a source of continuing education credit for BCBAs, BCBA-Ds, and BCaBAs.More fun than pressing a lever"
-                Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
+                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryTextColor},Dark={StaticResource DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK Autism POVs -->
                 <Label Text="Autism POVs" 
-                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
+                       Style="{StaticResource ScrollviewLabel}" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismPOVs">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
@@ -118,12 +118,12 @@ A spirited discussion between two BCBA-Ds and their BCBA host, a source of conti
                 </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="There are always topics in any community that aren't universally agreed upon and the autism community is no different. Because autism is considered a spectrum disorder,that means that each person on the spectrum largely has an experience uniquely their own."
-                Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
+                TextColor="{AppThemeBinding Light={StaticResource LightSecondaryTextColor},Dark={StaticResource DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK Adventures in Autism -->
                 <Label Text="Adventures in Autism" 
-                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
+                       Style="{StaticResource ScrollviewLabel}" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AIA" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -133,12 +133,12 @@ A spirited discussion between two BCBA-Ds and their BCBA host, a source of conti
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" Welcome to Adventures in Autism! This podcast was created as a safe place to come together and share our journeys with autism.
 Host, Megan Carranza, shares her family's experience with her son, Logan, and speaks with a variety of incredible guests."
-                 Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
+                 TextColor="{AppThemeBinding Light={StaticResource LightSecondaryTextColor},Dark={StaticResource DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK ASF Weekly Science -->
                 <Label Text="ASF Weekly Science" 
-                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}" />
+                       Style="{StaticResource ScrollviewLabel}" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}" />
                 <Image Source="ASF" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -147,12 +147,12 @@ Host, Megan Carranza, shares her family's experience with her son, Logan, and sp
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="  The latest autism research news stories with ASF Chief Science Officer Alycia Halladay"
-                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
+                  TextColor="{AppThemeBinding Light={StaticResource LightSecondaryTextColor},Dark={StaticResource DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK The Autism Show -->
                 <Label Text="The Autism Show" 
-                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
+                       Style="{StaticResource ScrollviewLabel}" BackgroundColor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismShow" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -162,7 +162,7 @@ Host, Megan Carranza, shares her family's experience with her son, Logan, and sp
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="Welcome to The Autism Show, the national event for autism, in partnership with the National Autistic Society.If you're looking for information and direction pre or post diagnosis, are facing daily challenges, or approaching significant transition points, then The Autism Show can help you.
 At the show, you can pick and choose from over 100 hours of talks, clinics and workshops, plus hundreds of specialist products and services. "
-                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
+                  TextColor="{AppThemeBinding Light={StaticResource LightSecondaryTextColor},Dark={StaticResource DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
             </StackLayout>
