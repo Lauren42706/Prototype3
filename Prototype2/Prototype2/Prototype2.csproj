@@ -41,7 +41,6 @@
     <Folder Include="ViewModel\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Converters\" />
-    <Folder Include="View\Controls\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +63,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\ChildHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\Controls\LoadingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\CreateAccountPage.xaml">
