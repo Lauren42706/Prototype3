@@ -3,22 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Community.Podcasts"
              x:Name="PodcastsPage"
-              Title="Podcasts Page">
+              Title="Podcasts Page"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
 
     <!--PODCASTS PAGE-->
     <ContentPage.Resources>
         <ResourceDictionary>
 
+
             <Style x:Key="ButtenNavStyle"
                    TargetType="Button">
                 <Setter Property="FontSize"
                         Value="Medium"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
                 <Setter Property="BorderColor"
                         Value="Black"/>
-                <Setter Property="BackgroundColor"
-                        Value="Transparent"/>
                 <Setter Property="BorderWidth"
                         Value="1.5"/>
                 <Setter Property="CornerRadius"
@@ -31,12 +29,8 @@
                    TargetType="Label">
                 <Setter Property="FontSize"
                         Value="Large"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
                 <Setter Property="Margin"
-                        Value="0,10,0,5"/>
+                        Value="0,5,0,5"/>
                 <Setter Property="LineBreakMode"
                         Value="WordWrap"/>
             </Style>
@@ -72,18 +66,24 @@
             <Button Grid.Row="2" 
                     Grid.Column="0"
                     Style="{StaticResource ButtenNavStyle}"
+                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Blogs"
                     Clicked="BlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     Style="{StaticResource ButtenNavStyle}"
+                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Vlogs"
                     Clicked="VlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="2"
                     Style="{StaticResource ButtenNavStyle}"
+                     Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Podcasts"
                     Clicked="PodcastsClicked"/>
 
@@ -94,7 +94,7 @@
                 
                 <!-- LINK ABA Inside Track -->
                 <Label Text="ABA Inside Track" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="ABA" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
@@ -104,12 +104,12 @@
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" A podcast about applied behavior analysis and the research that fuels the field.
 A spirited discussion between two BCBA-Ds and their BCBA host, a source of continuing education credit for BCBAs, BCBA-Ds, and BCaBAs.More fun than pressing a lever"
-                                  Style="{StaticResource LinkLabel }" />
+                Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK Autism POVs -->
                 <Label Text="Autism POVs" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismPOVs">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
@@ -118,12 +118,12 @@ A spirited discussion between two BCBA-Ds and their BCBA host, a source of conti
                 </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="There are always topics in any community that aren't universally agreed upon and the autism community is no different. Because autism is considered a spectrum disorder,that means that each person on the spectrum largely has an experience uniquely their own."
-                                  Style="{StaticResource LinkLabel }" />
+                Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK Adventures in Autism -->
                 <Label Text="Adventures in Autism" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AIA" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -133,12 +133,12 @@ A spirited discussion between two BCBA-Ds and their BCBA host, a source of conti
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" Welcome to Adventures in Autism! This podcast was created as a safe place to come together and share our journeys with autism.
 Host, Megan Carranza, shares her family's experience with her son, Logan, and speaks with a variety of incredible guests."
-                                  Style="{StaticResource LinkLabel }" />
+                 Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK ASF Weekly Science -->
                 <Label Text="ASF Weekly Science" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}" />
                 <Image Source="ASF" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -147,12 +147,12 @@ Host, Megan Carranza, shares her family's experience with her son, Logan, and sp
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="  The latest autism research news stories with ASF Chief Science Officer Alycia Halladay"
-                                  Style="{StaticResource LinkLabel }" />
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK The Autism Show -->
                 <Label Text="The Autism Show" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismShow" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -162,7 +162,7 @@ Host, Megan Carranza, shares her family's experience with her son, Logan, and sp
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="Welcome to The Autism Show, the national event for autism, in partnership with the National Autistic Society.If you're looking for information and direction pre or post diagnosis, are facing daily challenges, or approaching significant transition points, then The Autism Show can help you.
 At the show, you can pick and choose from over 100 hours of talks, clinics and workshops, plus hundreds of specialist products and services. "
-                                  Style="{StaticResource LinkLabel }" />
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
             </StackLayout>

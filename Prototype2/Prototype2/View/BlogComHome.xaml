@@ -2,23 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototype2.View.BlogComHome" 
-             Title="Blogs Page">
+             Title="Blogs Page"   BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}">
+    >
 
 
     <!--BLOGS PAGE/ COMMUNITY HOME PAGE-->
     <ContentPage.Resources>
         <ResourceDictionary>
 
+
             <Style x:Key="ButtenNavStyle"
                    TargetType="Button">
                 <Setter Property="FontSize"
                         Value="Medium"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
                 <Setter Property="BorderColor"
                         Value="Black"/>
-                <Setter Property="BackgroundColor"
-                        Value="Transparent"/>
                 <Setter Property="BorderWidth"
                         Value="1.5"/>
                 <Setter Property="CornerRadius"
@@ -31,12 +29,10 @@
                    TargetType="Label">
                 <Setter Property="FontSize"
                         Value="Large"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
                 <Setter Property="Margin"
                         Value="0,5,0,5"/>
+                <Setter Property="LineBreakMode"
+                        Value="WordWrap"/>
             </Style>
 
             <Style x:Key="LinkLabel"
@@ -70,19 +66,24 @@
             <Button Grid.Row="2" 
                     Grid.Column="0"
                     Style="{StaticResource ButtenNavStyle}"
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Blogs"
                     Clicked="BlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="1"
                     Style="{StaticResource ButtenNavStyle}"
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Vlogs"
                     Clicked="VlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="2"
                     Style="{StaticResource ButtenNavStyle}"
-                    
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Text="Podcasts"
                     Clicked="PodcastsClicked"/>
 
@@ -92,7 +93,7 @@
             <StackLayout>
                
                 <!-- LINK Autism Speaks Blog -->
-                <Label Text="Autism Speaks Blog"  Style="{StaticResource ScrollviewLabel}"/>
+                <Label Text="Autism Speaks Blog"  Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismSpeaks" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -101,14 +102,14 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" Autism Speaks is dedicated to promoting solutions, across the spectrum and throughout the life span, for the needs of people with autism and their families."
-                       Style="{StaticResource LinkLabel }"/>
+                 Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"   Style="{StaticResource LinkLabel }"/>
 
 
 
                 <!-- LINK Autism Society Blog-->
 
                 <Label Text="Autism Society Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AutismSociety" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -119,12 +120,12 @@
                 <Label LineBreakMode="WordWrap" Text="  Everyone's story is different.The experience of Autism is not one thing. It is many things. 
                                   It's dreams, talents, relationships, victories, hurdles, and everything in between. The connection between those experiences is you.
                                   You break the mold. No matter who you are, the person you are is infinite and you are the only you there is."
-                                  Style="{StaticResource LinkLabel }" />
+                 Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"  Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK The Autism Dad Blog -->
                 <Label Text="The Autism Dad Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                        <Image Source="AutismDad">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
@@ -136,12 +137,12 @@
  Welcome to The Autism Dad blog. This blog is all about my life as a single Dad raising my three amazing autistic kids. I'm honest, transparent,
  and very open about the struggles we face as a family. My message is one of hope, understanding, education, and perseverance.
  No matter what life throws our way, we always find a way through it."
- Style="{StaticResource LinkLabel }" />
+ Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
         
 
                 <!-- LINK Awesomism Mom -->
                 <Label Text="Awesomism Mom Blog" 
-                       Style="{StaticResource ScrollviewLabel}"/>
+                       Style="{StaticResource ScrollviewLabel}" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"/>
                 <Image Source="AwesomismMom" >
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -150,7 +151,8 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="Welcome to our AwesomismMom website! We're working to raise Autism Awareness, Acceptance and Activism.
- We're working with Team Awesomism by building a virtual academy that is focused on life skills and social skills for autistic adults, as well as help them get stable and steady for their future." Style="{StaticResource LinkLabel }" />
+ We're working with Team Awesomism by building a virtual academy that is focused on life skills and social skills for autistic adults, as well as help them get stable and steady for their future."
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
             </StackLayout>

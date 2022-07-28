@@ -2,15 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prototype2.View.Settings"
-             x:Name="SETTINGS">
+             x:Name="SETTINGS"  BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgro undColor}}">
 
-    <StackLayout>
-        <ListView Margin="10, 0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="Account" TextDecorations="Underline"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Button Text="Setting" Grid.Row="0"  
+                Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                   Textcolor="Black" /> 
+
+        <Button Text="Setting" Grid.Row="1" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+
+        <Button Text="Setting" Grid.Row="2" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+
+        <Button Text="Setting" Grid.Row="3" Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"/>
+
+        <Button Text="Setting" Grid.Row="5" Backgroundcolor="Pink" Textcolor="Black" />
+
+        
+        
+        
+    </Grid>
 </ContentPage>

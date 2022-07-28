@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Community.Vlogs"    
-              Title="Vlogs Page" >
+              Title="Vlogs Page"  
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightPageBackgroundColor}, Dark={StaticResource DarkPageBackgroundColor}}" >
 
     <!--VLOGS PAGE-->
     <ContentPage.Resources>
@@ -12,12 +13,8 @@
                    TargetType="Button">
                 <Setter Property="FontSize"
                         Value="Medium"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
                 <Setter Property="BorderColor"
                         Value="Black"/>
-                <Setter Property="BackgroundColor"
-                        Value="Transparent"/>
                 <Setter Property="BorderWidth"
                         Value="1.5"/>
                 <Setter Property="CornerRadius"
@@ -30,10 +27,6 @@
                    TargetType="Label">
                 <Setter Property="FontSize"
                         Value="Large"/>
-                <Setter Property="TextColor"
-                        Value="Black"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
                 <Setter Property="Margin"
                         Value="0,5,0,5"/>
                 <Setter Property="LineBreakMode"
@@ -71,18 +64,24 @@
 
             <Button Grid.Row="2" 
                     Grid.Column="0"
-                    Style="{StaticResource ButtenNavStyle}"
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
+                    Style="{StaticResource ButtenNavStyle},"
                     Text="Blogs"
                     Clicked="BlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="1"
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Style="{StaticResource ButtenNavStyle}"
                     Text="Vlogs"
                     Clicked="VlogsClicked"/>
 
             <Button Grid.Row="2" 
                     Grid.Column="2"
+                    Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
+                    Textcolor="{AppThemeBinding Light={LightButtonTextColor},Dark={DarkButtonTextColor}}"
                     Style="{StaticResource ButtenNavStyle}"
                     Text="Podcasts"
                     Clicked="PodcastsClicked"/>
@@ -93,7 +92,7 @@
         <ScrollView Padding="5">
             <StackLayout>
                 <!-- LINK The National Autistic Society Vlog -->
-                <Label Text="The National Autistic Society Blog" 
+                <Label Text="The National Autistic Society Blog"   Backgroundcolor="{AppThemeBinding Light={StaticResource LightButtonColor}, Dark={StaticResource DarkButtonColor}}"
                        Style="{StaticResource ScrollviewLabel}"/>
                 <Image Source="NAS" >
                     <Image.GestureRecognizers>
@@ -103,11 +102,11 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="We are the UK's leading charity for people on the autism spectrum and their families. Since 1962, we have been providing support, guidance and advice, as well as campaigning for improved rights, services and opportunities to help create a society that works for autistic people. "
-                                  Style="{StaticResource LinkLabel }" />
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"   Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK Kimock7 VLOG-->
-                <Label Text="Kimock7" 
+                <Label Text="Kimock7"  Fontcolor="{AppThemeBinding Light={LightPrimaryTextColor},Dark={DarkPrimaryTextColor}}"
                        Style="{StaticResource ScrollviewLabel}"/>
                 <Image Source="Kimock7" >
                     <Image.GestureRecognizers>
@@ -118,11 +117,11 @@
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" My goal in sharing my son's personal story is to change the way we think about the people
 around us–their abilities and their challenges.  Kimock7 is dedicated to autism awareness, acceptance, advocacy, activism, education, and autism nutrition and fathering a boy with Autism. "
-                                  Style="{StaticResource LinkLabel }" />
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}"   Style="{StaticResource LinkLabel }" />
 
 
                 <!-- LINK The Autism Helper VLOG -->
-                <Label Text="The Autism Helper" 
+                <Label Text="The Autism Helper"  Fontcolor="{AppThemeBinding Light={LightPrimaryTextColor},Dark={DarkPrimaryTextColor}}"
                        Style="{StaticResource ScrollviewLabel}"/>
                <Image Source="AutismHelper" >
                     <Image.GestureRecognizers>
@@ -132,11 +131,11 @@ around us–their abilities and their challenges.  Kimock7 is dedicated to autis
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text=" We at The Autism Helper, Inc. are dedicated to empowering those who support individuals with Autism by providing resources, tools, and the methods to measure success. "
-                                  Style="{StaticResource LinkLabel }" />
+                 Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
                
 
                 <!-- LINK Agony Autie VLOG -->
-                <Label Text="Agony Autie VLOG" 
+                <Label Text="Agony Autie VLOG"  Fontcolor="{AppThemeBinding Light={LightPrimaryTextColor},Dark={DarkPrimaryTextColor}}"
                        Style="{StaticResource ScrollviewLabel}"/>
                 <Image Source="AgonyAutie" >
                     <Image.GestureRecognizers>
@@ -146,7 +145,7 @@ around us–their abilities and their challenges.  Kimock7 is dedicated to autis
                     </Image.GestureRecognizers>
                 </Image>
                 <Label LineBreakMode="WordWrap" Text="The ramblings of a 35?year old Autistic woman, reaching out to autistics, parents, carers, professionals and society in general. "
-                                  Style="{StaticResource LinkLabel }" />
+                  Fontcolor="{AppThemeBinding Light={LightSecondaryTextColor},Dark={DarkSecondaryTextColor}}" Style="{StaticResource LinkLabel }" />
 
 
             </StackLayout>
