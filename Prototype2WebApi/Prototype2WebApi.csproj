@@ -19,10 +19,11 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Prototype2Shared\Prototype2Shared.csproj"/>
+		<ProjectReference Include="..\Prototype2Shared\Prototype2Shared.csproj" />
 	</ItemGroup>
 
 </Project>

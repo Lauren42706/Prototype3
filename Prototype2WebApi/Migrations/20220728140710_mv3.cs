@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Prototype2WebApi.Migrations
 {
-    public partial class Mv2 : Migration
+    public partial class mv3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,13 +13,29 @@ namespace Prototype2WebApi.Migrations
                 name: "Acheivements",
                 columns: table => new
                 {
-                    AcheivemesntsId = table.Column<int>(type: "int", nullable: false)
+                    AcheivementsId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descriptions = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Descriptions = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Acheivements", x => x.AcheivemesntsId);
+                    table.PrimaryKey("PK_Acheivements", x => x.AcheivementsId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Authentication",
+                columns: table => new
+                {
+                    AuthenticationId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Pin = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastLoginTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Authentication", x => x.AuthenticationId);
                 });
 
             migrationBuilder.CreateTable(
@@ -93,10 +109,10 @@ namespace Prototype2WebApi.Migrations
                 {
                     PostedStoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Privacy = table.Column<bool>(type: "bit", nullable: false),
-                    SaveId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SaveId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -109,8 +125,8 @@ namespace Prototype2WebApi.Migrations
                 {
                     ScheduleId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TaskName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TaskName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Completed = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -124,7 +140,7 @@ namespace Prototype2WebApi.Migrations
                 {
                     StickerId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StickerName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    StickerName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -137,7 +153,7 @@ namespace Prototype2WebApi.Migrations
                 {
                     StoryId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StickerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -151,16 +167,23 @@ namespace Prototype2WebApi.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CellNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CellNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AuthenticationId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserInfoData", x => x.UserId);
+                    table.ForeignKey(
+                        name: "FK_UserInfoData_Authentication_AuthenticationId",
+                        column: x => x.AuthenticationId,
+                        principalTable: "Authentication",
+                        principalColumn: "AuthenticationId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -198,6 +221,11 @@ namespace Prototype2WebApi.Migrations
                 name: "IX_FamilyGroups_UserId",
                 table: "FamilyGroups",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserInfoData_AuthenticationId",
+                table: "UserInfoData",
+                column: "AuthenticationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -237,6 +265,9 @@ namespace Prototype2WebApi.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserInfoData");
+
+            migrationBuilder.DropTable(
+                name: "Authentication");
         }
     }
 }
