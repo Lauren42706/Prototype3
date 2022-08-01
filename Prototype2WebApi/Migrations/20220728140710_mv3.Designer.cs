@@ -12,8 +12,8 @@ using Prototype2WebApi.Data;
 namespace Prototype2WebApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220713141112_Mv2")]
-    partial class Mv2
+    [Migration("20220728140710_mv3")]
+    partial class mv3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,19 +26,43 @@ namespace Prototype2WebApi.Migrations
 
             modelBuilder.Entity("Prototype2WebApi.Models.Acheivement", b =>
                 {
-                    b.Property<int>("AcheivemesntsId")
+                    b.Property<int>("AcheivementsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AcheivemesntsId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AcheivementsId"), 1L, 1);
 
                     b.Property<string>("Descriptions")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AcheivemesntsId");
+                    b.HasKey("AcheivementsId");
 
                     b.ToTable("Acheivements");
+                });
+
+            modelBuilder.Entity("Prototype2WebApi.Models.Authentication", b =>
+                {
+                    b.Property<int>("AuthenticationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthenticationId"), 1L, 1);
+
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("LastLoginTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Pin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AuthenticationId");
+
+                    b.ToTable("Authentication");
                 });
 
             modelBuilder.Entity("Prototype2WebApi.Models.Avatar", b =>
@@ -153,18 +177,15 @@ namespace Prototype2WebApi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostedStoryId"), 1L, 1);
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Privacy")
                         .HasColumnType("bit");
 
                     b.Property<string>("SaveId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PostedStoryId");
@@ -184,11 +205,9 @@ namespace Prototype2WebApi.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TaskName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ScheduleId");
@@ -205,7 +224,6 @@ namespace Prototype2WebApi.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StickerId"), 1L, 1);
 
                     b.Property<string>("StickerName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StickerId");
@@ -225,7 +243,6 @@ namespace Prototype2WebApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("StoryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StoryId");
@@ -241,30 +258,30 @@ namespace Prototype2WebApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
+                    b.Property<int>("AuthenticationId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CellNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EmailAddress")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
+
+                    b.HasIndex("AuthenticationId");
 
                     b.ToTable("UserInfoData");
                 });
@@ -286,6 +303,17 @@ namespace Prototype2WebApi.Migrations
                     b.Navigation("FamilyStatus");
 
                     b.Navigation("UserInfoData");
+                });
+
+            modelBuilder.Entity("Prototype2WebApi.Models.UserInfoData", b =>
+                {
+                    b.HasOne("Prototype2WebApi.Models.Authentication", "Authentication")
+                        .WithMany()
+                        .HasForeignKey("AuthenticationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Authentication");
                 });
 #pragma warning restore 612, 618
         }

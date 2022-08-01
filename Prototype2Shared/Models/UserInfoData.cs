@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Prototype2WebApi.Models
@@ -21,5 +22,9 @@ namespace Prototype2WebApi.Models
         public string CellNumber { get; set; }
         public string Password { get; set; }
         public DateTime DateTime { get; set; }
+
+        [ForeignKey("Authentication")]
+        public int AuthenticationId { get; set; }
+        public Authentication? Authentication { get; set; }
     }
 }

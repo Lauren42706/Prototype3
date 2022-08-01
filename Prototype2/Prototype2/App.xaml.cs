@@ -1,12 +1,18 @@
-﻿//using Prototype2.Services;
-using System;
-using System.IO;
+﻿using Prism;
+using Prototype2.Services;
+using Prototype2.ViewModel;
+using Prototype2.View;
+using Prototype2.Services.Interfaces;
+using Prototype2.View.Dialogs;
 using Xamarin.Forms;
+using Prism.Ioc;
+using Xamarin.Essentials.Implementation;
+using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms.Xaml;
 
 namespace Prototype2
 {
-    public partial class App : Application
+    public partial class App 
     {
         /// <summary>
         /// We will put or Database code here so that it 
@@ -26,23 +32,30 @@ namespace Prototype2
         //    }
         //}
 
-        public App()
+        public App(IPlatformInitializer initializer)
+            : base(initializer)
+        {
+
+        }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
+            containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+            containerRegistry.Register<IAuthentication, AuthenticationServices>();
 
-        protected override void OnSleep()
-        {
-        }
+            containerRegistry.RegisterSingleton<IDataCache, InMemoryDataCache>();
 
-        protected override void OnResume()
-        {
+            containerRegistry.Register<IAppConfiguration, AppConfigurationServices>();
+
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage, LoginViewModel>();
         }
     }
 }
