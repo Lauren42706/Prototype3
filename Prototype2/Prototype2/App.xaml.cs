@@ -42,7 +42,7 @@ namespace Prototype2
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -56,6 +56,9 @@ namespace Prototype2
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfileViewModel>();
+            containerRegistry.RegisterForNavigation<ParentHomePage, ParentViewModel>();
+            containerRegistry.RegisterForNavigation<ChildHomePage, ChildViewModel>();
         }
     }
 }

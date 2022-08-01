@@ -21,7 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="ViewModel\ChildViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\ParentViewModel.cs" />
+    <Compile Include="ViewModel\ProfileViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
   </ItemGroup>
 
@@ -38,9 +41,6 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="Helpers\Extensions\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="ViewModel\" />
     <Folder Include="Converters\" />
   </ItemGroup>
 

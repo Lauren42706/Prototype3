@@ -21,10 +21,30 @@ namespace Prototype2WebApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] AuthRequest auth)
         {
+            var authResponse = new AuthResponse();
+
             try
             {
                 var result = _prototypeDbRepository.PerformAuthenticationCheck(auth.UserName, auth.Pin);
-                return Ok(result);
+
+                if (result)
+                {
+                    var authentication = _prototypeDbRepository.GetAuthentication(auth.UserName, auth.Pin);
+
+                    if (authentication != null)
+                    {
+                        var customer = _prototypeDbRepository.GetUserByAuthenticationId(authentication.AuthenticationId);
+
+                        if (customer != null)
+                        {
+                            authResponse.Authenticated = true;
+                            authResponse.UserAuthenticated = customer;
+                        }
+                    }
+
+                }
+
+                return Ok(authResponse);
             }
             catch (Exception ex)
             {

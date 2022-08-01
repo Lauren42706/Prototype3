@@ -20,6 +20,8 @@ namespace Prototype2.ViewModel
         private IDialogService _dialogService;
         private IEventAggregator _eventAggregator;
 
+        private IDataCache _dataCache;
+
         private ValidatableObject<string> _email;
         public ValidatableObject<string> Email
         {
@@ -45,16 +47,19 @@ namespace Prototype2.ViewModel
                 MainState = LayoutState.Loading;
                 if (ValidateLoginData())
                 {
-                    var user = await _authenticationService.Authenticate(Email.Value, Pin.Value);
+                    var authResponse = await _authenticationService.Authenticate(Email.Value, Pin.Value);
 
-                    if (user)
+                    if (authResponse.Authenticated)
                     {
                         ClearAuthData();
 
 
                         // TODO set login state
 
-                        await NavigationService.NavigateAsync("myapp:///NavigationPage/HomePage");
+                        _dataCache.IsAuthenticated = true;
+                        _dataCache.UserAuthentication = authResponse.UserAuthenticated;
+
+                        await NavigationService.NavigateAsync("myapp:///NavigationPage/ProfilePage");
 
                     }
                     else

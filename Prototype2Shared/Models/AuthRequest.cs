@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Prototype2Shared.Models
+﻿namespace Prototype2Shared.Models
 {
     public class AuthRequest
     {

@@ -1,4 +1,5 @@
-﻿using Prototype2WebApi.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Prototype2WebApi.Interfaces;
 using Prototype2WebApi.Models;
 
 namespace Prototype2WebApi.Data
@@ -83,6 +84,13 @@ namespace Prototype2WebApi.Data
             var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(cell)).FirstOrDefault();
             return user;
         }
+
+        public UserInfoData GetUserByAuthenticationId(int authenticationId, bool fullFetch = true)
+        {
+                var user = _dataContext.UserInfoDatas.Where(x => x.AuthenticationId == authenticationId).FirstOrDefault();
+                return user;
+        }
+
         public UserInfoData GetCustomerByPassword(string password)
         {
             var user = _dataContext.UserInfoDatas.Where(x => x.LastName.Contains(password)).FirstOrDefault();
@@ -255,6 +263,14 @@ namespace Prototype2WebApi.Data
             }
 
             return false;
+        }
+
+        public Authentication GetAuthentication(string userName, string pin)
+        {
+            var user = _dataContext.Authentications.Where(u => u.EmailAddress == userName && u.Pin == pin).FirstOrDefault();
+
+
+            return user;
         }
     }
 }

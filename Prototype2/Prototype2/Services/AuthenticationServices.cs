@@ -21,7 +21,7 @@ namespace Prototype2.Services
             _config = config;
         }
 
-        public async Task<bool> Authenticate(string userName, string pin)
+        public async Task<AuthResponse> Authenticate(string userName, string pin)
         {
             Uri uri = new Uri(_config.BankingServerUrl + "api/Authentication");
 
@@ -40,7 +40,7 @@ namespace Prototype2.Services
                 {
                     var contentResponse = await response.Content.ReadAsStringAsync();
 
-                    var valueResponse = JsonConvert.DeserializeObject<bool>(contentResponse);
+                    var valueResponse = JsonConvert.DeserializeObject<AuthResponse>(contentResponse);
 
                     return valueResponse;
                 }
@@ -51,7 +51,7 @@ namespace Prototype2.Services
                 Debug.WriteLine(@"\tERROR {0}", ex.Message);
             }
 
-            return false;
+            return new AuthResponse();
         }
     }
 }
