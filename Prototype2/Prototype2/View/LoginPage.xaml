@@ -23,7 +23,7 @@
                Source="smiley.png"/>
         <Label Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" FontSize="50"
                Text="Welcome to StickerTime!" HorizontalTextAlignment="Center"
-               FontSize="50"/>
+              />
         <Entry Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"
                 Margin="10, 0" Placeholder="Email Address"/>
         <Entry Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4"
